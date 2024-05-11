@@ -22,10 +22,7 @@ public class HilosByUserResponse {
     // password
     private String password;
 
-    private String image_path;
-
-    private String background_picture;
-
     private String enlace_imagen;
+    private String enlace_portada;
     private List<HilosDTO> hilos;
 }

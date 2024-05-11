@@ -26,13 +26,15 @@ public class Estado {
     private String nickname;
 
     @ElementCollection
+    @CollectionTable(name = "estados_contenidos", joinColumns = @JoinColumn(name = "estado_id"))
+    @Column(name = "url")
     private List<String> contenido = new ArrayList<>();
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "fecha_creacion", nullable = false)
     private Date fechaCreacion;
 
-    private String user_profilepicture;
+    private String enlace_imagen;
 
     private int cantidadReacciones;
 

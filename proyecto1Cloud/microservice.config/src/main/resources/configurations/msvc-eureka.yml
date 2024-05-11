@@ -1,0 +1,17 @@
+server:
+  port: 8761
+
+# Nombre de la aplicacion
+spring:
+  application:
+    name: msvc-eureka
+
+# Configuraci�n de Eureka, para que nuestros microservicios se registren aqui
+eureka:
+  instance:
+    hostname: localhost   # Nombre del host donde se encuentra el servidor de Eureka
+  client:
+    registerWithEureka: false  # No se registra a si mismo
+    fetchRegistry: false        # No se registra a si mismo
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  # URL del servidor de Eureka

@@ -27,6 +27,8 @@ public class Usuario {
 
     // Atributos
     // name
+    // atributo obligatorio
+    @Column(nullable = false)
     private String nickname;
     // email
 
@@ -40,6 +42,8 @@ public class Usuario {
     private String background_picture;
 
     private String enlace_imagen;
+
+    private String enlace_portada;
 
     @ElementCollection
     private Set<Long> hilosCreados = new HashSet<>();

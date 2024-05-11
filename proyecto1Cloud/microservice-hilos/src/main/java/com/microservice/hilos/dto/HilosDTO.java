@@ -21,23 +21,18 @@ import java.util.List;
 @NoArgsConstructor
 public class HilosDTO {
 
-    @Size(max = 3000)
-    @Column(nullable = false)
+
     private String tema;
 
-    @Size(max = 3000)
-    @Column(nullable = false)
     private String contenido;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "fecha_creacion", nullable = false) // Configura el nombre de la columna
     private Date fechaCreacion;
 
 
     private Long usuario;
 
-    //@ElementCollection
-    //private List<Long> respuestas = new ArrayList<>();
+
+    private List<Long> respuestas = new ArrayList<>();
 
     private Long cantidadReaccciones;
 

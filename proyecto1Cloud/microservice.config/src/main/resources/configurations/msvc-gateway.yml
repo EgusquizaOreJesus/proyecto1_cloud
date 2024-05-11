@@ -1,0 +1,31 @@
+# aqui haremos las peticiones
+server:
+  port: 8080
+
+eureka:
+  client:
+    registerWithEureka: false
+
+spring:
+  application:
+    name: msvc-gateway
+  cloud:
+    gateway:
+      mvc:
+        routes:    # rutas a las que se puede acceder
+          - id: usuarios
+            uri: http://localhost:9092
+            predicates:
+              - Path=/api/usuarios/**
+          - id: respuesta
+            uri: http://localhost:9091
+            predicates:
+              - Path=/api/respuestas/**
+          - id: hilos
+            uri: http://localhost:9090
+            predicates:
+              - Path=/api/hilos/**
+          - id: estados
+            uri: http://localhost:9093
+            predicates:
+              - Path=/api/estados/**
