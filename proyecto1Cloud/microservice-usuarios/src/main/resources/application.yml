@@ -2,10 +2,10 @@ spring:
   application:
     name: msvc-usuarios
   config:
-    import: optional:configserver:http://localhost:8888
+    import: optional:configserver:http://54.89.174.3:8888
 
 microservicio:
-  base-url: http://localhost:9092
+  base-url: http://54.89.174.3:9092
 
 frontend:
   base-url: http://localhost:7777

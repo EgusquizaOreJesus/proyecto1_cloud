@@ -6,7 +6,7 @@ spring:
     name: msvc-respuestas
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/msvc_proyectocloud
+    url: jdbc:postgresql://54.89.174.3:5432/msvc_proyectocloud
     username: postgres
     password: postgres
   jpa:
@@ -17,7 +17,7 @@ spring:
 
 eureka:
   instance:
-    hostname: localhost
+    hostname: 54.89.174.3
   client:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:8761/eureka/
