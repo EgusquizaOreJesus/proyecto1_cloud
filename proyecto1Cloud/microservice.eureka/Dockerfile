@@ -4,10 +4,10 @@ FROM openjdk:17-oracle
 WORKDIR /app/eureka-server
 
 
-COPY . .
+COPY ./target/microservice.eureka-0.0.1-SNAPSHOT.jar app.jar
 
 
 EXPOSE 8761
 
 
-ENTRYPOINT ["java","-jar","app.jar"]
+CMD ["java","-jar","app.jar"]
