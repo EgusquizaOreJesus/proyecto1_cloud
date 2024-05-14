@@ -1,5 +1,4 @@
 spring:
   application:
     name: msvc-gateway
-  config:
-    import: optional:configserver:http://54.221.169.95:8888
+

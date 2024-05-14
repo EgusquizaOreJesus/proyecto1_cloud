@@ -1,5 +1,3 @@
 spring:
   application:
     name: msvc-hilos
-  config:
-    import: optional:configserver:http://54.221.169.95:8888

@@ -1,13 +1,14 @@
-
 server:
   port: 8761
 
-
+spring:
+  application:
+    name: msvc-eureka
 eureka:
   instance:
-    hostname: 54.89.113.172   # Nombre del host donde se encuentra el servidor de Eureka
+    hostname: 54.226.30.209   # Nombre del host donde se encuentra el servidor de Eureka
   client:
     registerWithEureka: false  # No se registra a si mismo
     fetchRegistry: false        # No se registra a si mismo
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  # URL del servidor de Eureka
+      defaultZone: http://54.226.30.209:8761/eureka # URL del servidor de Eureka

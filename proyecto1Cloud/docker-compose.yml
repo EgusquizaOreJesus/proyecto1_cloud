@@ -24,8 +24,61 @@ services:
     depends_on:
         - config-server
 
+  gateway:
+    build:
+      context: ./microservice.gateway
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - spring-cloud-network
+    depends_on:
+      - config-server
+      - eureka-server
 
+  msvc-usuarios:
+    build:
+      context: ./microservice-usuarios
+      dockerfile: Dockerfile
+    ports:
+      - "9092:9092"
+    networks:
+      - spring-cloud-network
+    depends_on:
+      - gateway
 
+  msvc-estados:
+    build:
+      context: ./microservice-estados
+      dockerfile: Dockerfile
+    ports:
+      - "9093:9093"
+    networks:
+      - spring-cloud-network
+    depends_on:
+      - gateway
+
+  msvc-respuestas:
+    build:
+      context: ./microservice-respuesta
+      dockerfile: Dockerfile
+    ports:
+      - "9094:9094"
+    networks:
+      - spring-cloud-network
+    depends_on:
+      - gateway
+
+  msvc-hilos:
+    build:
+      context: ./microservice-hilos
+      dockerfile: Dockerfile
+    ports:
+      - "9095:9095"
+    networks:
+      - spring-cloud-network
+    depends_on:
+      - gateway
 
 networks:
   spring-cloud-network:

@@ -4,7 +4,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app/gateway
 
 
-COPY microservice.gateway-0.0.1-SNAPSHOT.jar app.jar
+COPY microservice.gateway-0.0.1.jar app.jar
 
 
 EXPOSE 8080
