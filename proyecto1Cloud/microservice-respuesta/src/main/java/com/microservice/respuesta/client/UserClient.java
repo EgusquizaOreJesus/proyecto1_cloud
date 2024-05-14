@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import java.util.List;
 import java.util.Set;
 
-@FeignClient(value = "msvc-usuarios", url = "http://54.89.113.172:9092/api/usuarios")
+@FeignClient(value = "msvc-usuarios", url = "http://54.172.40.175:9092/api/usuarios")
 public interface UserClient {
 
     // Lista de HilosDTO que se obtiene del microservicio de usuarios por Id

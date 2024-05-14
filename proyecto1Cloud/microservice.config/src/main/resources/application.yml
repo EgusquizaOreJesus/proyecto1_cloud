@@ -8,7 +8,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/EgusquizaOreJesus/configurations_server_proyectoCloud.git
+          uri: https://github.com/Migue1Avalos/configurations_server_proyectoCloud.git
           clone-on-start: true
 
 
