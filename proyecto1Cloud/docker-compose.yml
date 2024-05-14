@@ -8,8 +8,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8888:8888"
-    networks:
-      - spring-cloud-network
+
 
   eureka-server:
     container_name: eureka-server
@@ -21,10 +20,11 @@ services:
       - "8761:8761"
     networks:
       - spring-cloud-network
-    depends_on:
-        - config-server
+
 
   gateway:
+    container_name: gateway
+    image: gateway
     build:
       context: ./microservice.gateway
       dockerfile: Dockerfile
@@ -32,11 +32,11 @@ services:
       - "8080:8080"
     networks:
       - spring-cloud-network
-    depends_on:
-      - config-server
-      - eureka-server
+
 
   msvc-usuarios:
+    container_name: msvc-usuarios
+    image: msvc-usuarios
     build:
       context: ./microservice-usuarios
       dockerfile: Dockerfile
@@ -44,10 +44,11 @@ services:
       - "9092:9092"
     networks:
       - spring-cloud-network
-    depends_on:
-      - gateway
+
 
   msvc-estados:
+    container_name: msvc-estados
+    image: msvc-estados
     build:
       context: ./microservice-estados
       dockerfile: Dockerfile
@@ -55,10 +56,11 @@ services:
       - "9093:9093"
     networks:
       - spring-cloud-network
-    depends_on:
-      - gateway
+
 
   msvc-respuestas:
+    container_name: msvc-respuestas
+    image: msvc-respuestas
     build:
       context: ./microservice-respuesta
       dockerfile: Dockerfile
@@ -66,10 +68,11 @@ services:
       - "9094:9094"
     networks:
       - spring-cloud-network
-    depends_on:
-      - gateway
+
 
   msvc-hilos:
+    container_name: msvc-hilos
+    image: msvc-hilos
     build:
       context: ./microservice-hilos
       dockerfile: Dockerfile
@@ -77,8 +80,6 @@ services:
       - "9095:9095"
     networks:
       - spring-cloud-network
-    depends_on:
-      - gateway
 
 networks:
   spring-cloud-network:

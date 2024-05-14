@@ -3,7 +3,7 @@ spring:
     name: msvc-usuarios
 
 microservicio:
-  base-url: http://54.89.113.172:9092
+  base-url: http://${my_ip.value}:9092
 
 frontend:
   base-url: http://localhost:7777
