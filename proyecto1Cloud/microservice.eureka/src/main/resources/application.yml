@@ -1,5 +1,6 @@
 spring:
+  cloud:
+    config:
+      profile: dev
   application:
     name: msvc-eureka
-  config:
-    import: optional:configserver:http://54.209.203.1:8888
