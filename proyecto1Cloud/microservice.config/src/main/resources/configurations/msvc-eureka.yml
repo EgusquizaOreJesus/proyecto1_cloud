@@ -13,4 +13,4 @@ eureka:
     registerWithEureka: false  # No se registra a si mismo
     fetchRegistry: false        # No se registra a si mismo
     serviceUrl:
-      defaultZone: http://eureka-sedrver/${server.port}/eureka/  # URL del servidor de Eureka
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  # URL del servidor de Eureka
