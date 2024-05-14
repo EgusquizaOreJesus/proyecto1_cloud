@@ -1,7 +1,5 @@
 spring:
   application:
     name: msvc-eureka
-  cloud:
-    config:
-      uri: http://54.226.30.209:8888
-      name: msvc-eureka
+  config:
+    import: optional:configserver:http://54.209.203.1:8888
