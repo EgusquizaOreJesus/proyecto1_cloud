@@ -1,0 +1,68 @@
+version: '3.8'
+services:
+  config-server:
+    build:
+      context: ./config-server
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888"
+    networks:
+      - spring-cloud-network
+
+  eureka-server:
+    build:
+      context: ./eureka-server
+      dockerfile: Dockerfile
+    ports:
+      - "8761:8761"
+    networks:
+      - spring-cloud-network
+
+  gateway:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - spring-cloud-network
+
+  msvc-usuarios:
+    build:
+      context: ./msvc-usuarios
+      dockerfile: Dockerfile
+    ports:
+      - "9092:9092"
+    networks:
+      - spring-cloud-network
+
+  msvc-estados:
+    build:
+      context: ./msvc-estados
+      dockerfile: Dockerfile
+    ports:
+      - "9093:9093"
+    networks:
+      - spring-cloud-network
+
+  msvc-respuestas:
+    build:
+      context: ./msvc-respuestas
+      dockerfile: Dockerfile
+    ports:
+      - "9094:9094"
+    networks:
+      - spring-cloud-network
+
+  msvc-hilos:
+    build:
+      context: ./msvc-hilos
+      dockerfile: Dockerfile
+    ports:
+      - "9095:9095"
+    networks:
+      - spring-cloud-network
+
+networks:
+  spring-cloud-network:
+    driver: bridge

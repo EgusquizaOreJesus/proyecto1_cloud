@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/proyecto1Cloud/microservice-estados/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/proyecto1Cloud/microservice-hilos/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/proyecto1Cloud/microservice-respuesta/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/proyecto1Cloud/microservice-usuarios/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/proyecto1Cloud/microservice.config/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/proyecto1Cloud/microservice.eureka/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/proyecto1Cloud/microservice.gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/proyecto1Cloud/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/proyecto1Cloud/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
