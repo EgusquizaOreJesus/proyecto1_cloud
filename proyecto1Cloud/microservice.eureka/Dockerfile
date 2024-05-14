@@ -4,7 +4,7 @@ FROM openjdk:17-oracle
 WORKDIR /app/eureka-server
 
 
-COPY target/eureka-server-*.jar app.jar
+COPY . .
 
 
 EXPOSE 8761

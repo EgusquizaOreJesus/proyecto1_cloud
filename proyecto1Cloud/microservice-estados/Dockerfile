@@ -4,7 +4,7 @@ FROM openjdk:17-oracle
 WORKDIR /app/estados
 
 
-COPY target/msvc-estados-*.jar app.jar
+COPY . .
 
 
 EXPOSE 9093

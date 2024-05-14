@@ -4,7 +4,7 @@ FROM openjdk:17-oracle
 WORKDIR /app/hilos
 
 
-COPY target/msvc-hilos-*.jar app.jar
+COPY . .
 
 
 EXPOSE 9095

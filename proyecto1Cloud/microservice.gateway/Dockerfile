@@ -4,7 +4,7 @@ FROM openjdk:17-oracle
 WORKDIR /app/gateway
 
 
-COPY target/gateway-*.jar app.jar
+COPY . .
 
 
 EXPOSE 8080

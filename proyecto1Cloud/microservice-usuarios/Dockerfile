@@ -4,7 +4,7 @@ FROM openjdk:17-oracle
 WORKDIR /app/usuarios
 
 
-COPY target/msvc-usuarios-*.jar app.jar
+COPY . .
 
 
 EXPOSE 9092

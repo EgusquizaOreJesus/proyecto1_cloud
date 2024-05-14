@@ -4,7 +4,7 @@ FROM openjdk:17-oracle
 WORKDIR /app/config-server
 
 
-COPY target/config-server-*.jar app.jar
+COPY . .
 
 
 EXPOSE 8888

@@ -4,7 +4,7 @@ FROM openjdk:17-oracle
 WORKDIR /app/respuestas
 
 
-COPY target/msvc-respuestas-*.jar app.jar
+COPY . .
 
 
 EXPOSE 9094
