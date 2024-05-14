@@ -22,60 +22,7 @@ services:
     networks:
       - spring-cloud-network
 
-  gateway:
-    container_name: gateway
-    image: gateway
-    build:
-      context: ./microservice.gateway
-      dockerfile: Dockerfile
-    ports:
-      - "8080:8080"
-    networks:
-      - spring-cloud-network
 
-  msvc-usuarios:
-    container_name: msvc-usuarios
-    image: msvc-usuarios
-    build:
-      context: ./microservice-usuarios
-      dockerfile: Dockerfile
-    ports:
-      - "9092:9092"
-    networks:
-      - spring-cloud-network
-
-  msvc-estados:
-    container_name: msvc-estados
-    image: msvc-estados
-    build:
-      context: ./microservice-estados
-      dockerfile: Dockerfile
-    ports:
-      - "9093:9093"
-    networks:
-      - spring-cloud-network
-
-  msvc-respuestas:
-    container_name: msvc-respuestas
-    image: msvc-respuestas
-    build:
-      context: ./microservice-respuesta
-      dockerfile: Dockerfile
-    ports:
-      - "9094:9094"
-    networks:
-      - spring-cloud-network
-
-  msvc-hilos:
-    container_name: msvc-hilos
-    image: msvc-hilos
-    build:
-      context: ./microservice-hilos
-      dockerfile: Dockerfile
-    ports:
-      - "9095:9095"
-    networks:
-      - spring-cloud-network
 
 
 networks:
