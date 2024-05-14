@@ -29,7 +29,7 @@ services:
 
   msvc-usuarios:
     build:
-      context: ./microservice.usuarios
+      context: ./microservice-usuarios
       dockerfile: Dockerfile
     ports:
       - "9092:9092"
