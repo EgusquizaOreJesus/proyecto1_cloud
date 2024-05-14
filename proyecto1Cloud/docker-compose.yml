@@ -21,6 +21,8 @@ services:
       - "8761:8761"
     networks:
       - spring-cloud-network
+    depends_on:
+        - config-server
 
 
 
