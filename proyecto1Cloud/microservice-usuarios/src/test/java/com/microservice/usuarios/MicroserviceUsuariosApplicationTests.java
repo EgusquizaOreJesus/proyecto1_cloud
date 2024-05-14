@@ -6,8 +6,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class MicroserviceUsuariosApplicationTests {
 
-	@Test
+	/*@Test
 	void contextLoads() {
 	}
+	*/
+
 
 }

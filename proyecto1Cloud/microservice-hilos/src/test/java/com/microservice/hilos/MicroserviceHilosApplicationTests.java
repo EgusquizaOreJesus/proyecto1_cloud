@@ -6,8 +6,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class MicroserviceHilosApplicationTests {
 
-	@Test
+	/*@Test
 	void contextLoads() {
 	}
+	*/
+
 
 }

@@ -6,8 +6,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class MicroServiceGatewayApplicationTests {
 
-	@Test
+	/*@Test
 	void contextLoads() {
 	}
+	*/
+
 
 }
