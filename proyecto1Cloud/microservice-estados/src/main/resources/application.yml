@@ -2,4 +2,4 @@ spring:
   application:
     name: msvc-estados
   config:
-    import: optional:configserver:http://54.89.174.3:8888
+    import: optional:configserver:http://3.87.248.168:8888
