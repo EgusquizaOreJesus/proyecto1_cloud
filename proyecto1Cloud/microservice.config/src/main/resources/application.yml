@@ -4,12 +4,11 @@ server:
 spring:
   application:
     name: microservice-config
-  profiles:
-    active: native
   cloud:
     config:
       server:
-        native:
-          search-locations: classpath:/configurations
+        git:
+          uri: https://github.com/EgusquizaOreJesus/configurations_server_proyectoCloud.git
+          clone-on-start: true
 
 
