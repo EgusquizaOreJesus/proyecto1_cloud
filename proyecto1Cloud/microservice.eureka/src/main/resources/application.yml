@@ -1,5 +1,10 @@
+
+server:
+  port: 8761
+
+# Nombre de la aplicacion
 spring:
   application:
     name: msvc-eureka
   config:
-    import: optional:configserver:http://localhost:8888   # Le decimos que este es la ruta en donde se encuentra el servidor de configuraci�n
+    import: optional:configserver:http://54.221.169.95:8888

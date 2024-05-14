@@ -9,7 +9,7 @@ spring:
 # Configuraci�n de Eureka, para que nuestros microservicios se registren aqui
 eureka:
   instance:
-    hostname: localhost   # Nombre del host donde se encuentra el servidor de Eureka
+    hostname: 54.221.169.95   # Nombre del host donde se encuentra el servidor de Eureka
   client:
     registerWithEureka: false  # No se registra a si mismo
     fetchRegistry: false        # No se registra a si mismo

@@ -1,10 +1,10 @@
-FROM openjdk:17-oracle
+FROM openjdk:17-jdk-slim
 
 
 WORKDIR /app/respuestas
 
 
-COPY ./target/microservice-respuesta-0.0.1-SNAPSHOT.jar app.jar
+COPY microservice-respuesta-0.0.1-SNAPSHOT.jar app.jar
 
 
 EXPOSE 9094

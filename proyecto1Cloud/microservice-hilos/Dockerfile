@@ -1,10 +1,10 @@
-FROM openjdk:17-oracle
+FROM openjdk:17-jdk-slim
 
 
 WORKDIR /app/hilos
 
 
-COPY ./target/microservice-hilos-0.0.1-SNAPSHOT.jar app.jar
+COPY microservice-hilos-0.0.1-SNAPSHOT.jar app.jar
 
 
 EXPOSE 9095

@@ -1,6 +1,8 @@
 version: '3.8'
 services:
   config-server:
+    container_name: config-server
+    image: config-server
     build:
       context: ./microservice.config
       dockerfile: Dockerfile
@@ -10,6 +12,8 @@ services:
       - spring-cloud-network
 
   eureka-server:
+    container_name: eureka-server
+    image: eureka-server
     build:
       context: ./microservice.eureka
       dockerfile: Dockerfile
@@ -19,6 +23,8 @@ services:
       - spring-cloud-network
 
   gateway:
+    container_name: gateway
+    image: gateway
     build:
       context: ./microservice.gateway
       dockerfile: Dockerfile
@@ -28,6 +34,8 @@ services:
       - spring-cloud-network
 
   msvc-usuarios:
+    container_name: msvc-usuarios
+    image: msvc-usuarios
     build:
       context: ./microservice-usuarios
       dockerfile: Dockerfile
@@ -37,6 +45,8 @@ services:
       - spring-cloud-network
 
   msvc-estados:
+    container_name: msvc-estados
+    image: msvc-estados
     build:
       context: ./microservice-estados
       dockerfile: Dockerfile
@@ -46,6 +56,8 @@ services:
       - spring-cloud-network
 
   msvc-respuestas:
+    container_name: msvc-respuestas
+    image: msvc-respuestas
     build:
       context: ./microservice-respuesta
       dockerfile: Dockerfile
@@ -55,6 +67,8 @@ services:
       - spring-cloud-network
 
   msvc-hilos:
+    container_name: msvc-hilos
+    image: msvc-hilos
     build:
       context: ./microservice-hilos
       dockerfile: Dockerfile
@@ -62,6 +76,7 @@ services:
       - "9095:9095"
     networks:
       - spring-cloud-network
+
 
 networks:
   spring-cloud-network:

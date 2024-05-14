@@ -1,10 +1,10 @@
-FROM openjdk:17-oracle
+FROM openjdk:17-jdk-slim
 
 
 WORKDIR /app/config-server
 
 
-COPY ./target/microservice.config-0.0.1-SNAPSHOT.jar app.jar
+COPY microservice.config-0.0.1-SNAPSHOT.jar app.jar
 
 
 EXPOSE 8888
