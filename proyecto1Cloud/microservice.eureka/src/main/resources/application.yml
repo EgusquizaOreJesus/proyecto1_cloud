@@ -4,6 +4,9 @@ server:
 spring:
   application:
     name: msvc-eureka
+  cloud:
+    config:
+      import: optional:configserver:http://52.87.251.253:8888
 eureka:
   instance:
     hostname: 52.87.251.253   # Nombre del host donde se encuentra el servidor de Eureka
