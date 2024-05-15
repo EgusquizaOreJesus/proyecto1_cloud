@@ -6,9 +6,9 @@ spring:
     name: msvc-eureka
 eureka:
   instance:
-    hostname: 54.242.109.22   # Nombre del host donde se encuentra el servidor de Eureka
+    hostname: 52.87.251.253   # Nombre del host donde se encuentra el servidor de Eureka
   client:
     registerWithEureka: false  # No se registra a si mismo
     fetchRegistry: false        # No se registra a si mismo
     serviceUrl:
-      defaultZone: http://54.242.109.22:8761/eureka # URL del servidor de Eureka
+      defaultZone: http://52.87.251.253:8761/eureka # URL del servidor de Eureka
