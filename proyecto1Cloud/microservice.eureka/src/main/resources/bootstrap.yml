@@ -1,13 +1,19 @@
+server:
+  port: 8761
+
 spring:
   application:
     name: msvc-eureka
   config:
-    import: optional:configserver:http://52.87.251.253:8888
-
+    import: optional:configserver:http://54.90.34.44:8888
 
 eureka:
+  instance:
+    hostname: 54.90.34.44
   client:
     fetch-registry: false
     register-with-eureka: false
     service-url:
-      default-zone: http://52.87.251.253:8761/eureka/
+      default-zone: http://54.90.34.44:8761/eureka/
+
+
