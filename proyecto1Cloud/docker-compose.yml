@@ -7,7 +7,7 @@ services:
       context: ./microservice.config
       dockerfile: Dockerfile
     ports:
-      - "8888:8888"
+      - "8081:8081"
 
 
   eureka-server:
@@ -20,7 +20,8 @@ services:
       - "8761:8761"
     networks:
       - spring-cloud-network
-
+    depends_on:
+      - config-server
 
 networks:
   spring-cloud-network:
