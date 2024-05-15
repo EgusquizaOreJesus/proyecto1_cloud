@@ -1,10 +1,9 @@
 spring:
   application:
     name: msvc-eureka
-  cloud:
-    config:
-      enabled: true
-      uri: http://52.87.251.253:8081
+  config:
+    import: optional:configserver:http://52.87.251.253:8888
+
 
 eureka:
   client:
