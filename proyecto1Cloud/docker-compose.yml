@@ -21,6 +21,8 @@ services:
       - "8761:8761"
     networks:
       - spring-cloud-network
+    environment:
+        - spring.profiles.active=default
     depends_on:
         - config-server
 
