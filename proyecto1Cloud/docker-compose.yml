@@ -1,15 +1,5 @@
 version: '3.8'
 services:
-  config-server:
-    container_name: config-server
-    image: config-server
-    build:
-      context: ./microservice.config
-      dockerfile: Dockerfile
-    ports:
-      - "8081:8081"
-
-
   gateway:
     container_name: gateway
     image: gateway
@@ -34,8 +24,6 @@ services:
       - spring-cloud-network
     depends_on:
       - gateway
-      - config-server
-
 
   msvc-estados:
     container_name: msvc-estados
@@ -49,8 +37,6 @@ services:
       - spring-cloud-network
     depends_on:
       - gateway
-      - config-server
-
 
   msvc-respuestas:
     container_name: msvc-respuestas
@@ -64,7 +50,6 @@ services:
       - spring-cloud-network
     depends_on:
       - gateway
-      - config-server
 
   msvc-hilos:
     container_name: msvc-hilos
@@ -78,7 +63,7 @@ services:
       - spring-cloud-network
     depends_on:
       - gateway
-      - config-server
+
 networks:
   spring-cloud-network:
     driver: bridge
