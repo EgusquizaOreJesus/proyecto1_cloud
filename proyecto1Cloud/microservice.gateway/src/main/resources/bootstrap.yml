@@ -1,4 +1,12 @@
+my_ip:
+  value: 35.153.19.104
+
 spring:
+  application:
+    name: msvc-gateway
+
   cloud:
     config:
-      uri: http://52.87.251.253:8888
+      uri: http://${my_ip.value}:8081
+      profile: dev
+

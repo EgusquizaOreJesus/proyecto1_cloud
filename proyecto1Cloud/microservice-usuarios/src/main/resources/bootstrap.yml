@@ -1,9 +1,17 @@
 my_ip:
-  value: 52.87.251.253
+  value: 35.153.19.104
 
 spring:
+  application:
+    name: msvc-usuarios
+
   cloud:
     config:
-      uri: http://${my_ip.value}:8888
+      uri: http://${my_ip.value}:8081
+      profile: dev
 
+microservicio:
+  base-url: http://${my_ip.value}:9092
 
+frontend:
+  base-url: http://localhost:7777
