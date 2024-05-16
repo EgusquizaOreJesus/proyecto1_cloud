@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+  config-server:
+    container_name: config-server
+    image: config-server
+    build:
+      context: microservice.config
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    networks:
+      - spring-cloud-network
+
+
+  eureka-server:
+    container_name: eureka-server
+    image: eureka-server
+    build:
+      context: microservice.eureka
+      dockerfile: Dockerfile
+    ports:
+      - "8761:8761"
+    networks:
+      - spring-cloud-network
+
+
+networks:
+  spring-cloud-network:
+    driver: bridge
