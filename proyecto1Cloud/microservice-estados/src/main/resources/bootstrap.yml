@@ -1,12 +1,13 @@
 my_ip:
-  value: 35.153.19.104
+  value: 34.224.1.226
+
+my_ip_config:
+  value: 100.28.129.190
 
 spring:
   application:
     name: msvc-estados
-
   cloud:
     config:
-      uri: http://${my_ip.value}:8081
+      uri: http://${my_ip_config.value}:8081
       profile: dev
-

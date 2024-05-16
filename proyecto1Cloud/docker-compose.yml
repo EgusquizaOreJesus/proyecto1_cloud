@@ -45,7 +45,7 @@ services:
       context: ./microservice-respuesta
       dockerfile: Dockerfile
     ports:
-      - "9094:9094"
+      - "9091:9091"
     networks:
       - spring-cloud-network
     depends_on:
@@ -58,7 +58,7 @@ services:
       context: ./microservice-hilos
       dockerfile: Dockerfile
     ports:
-      - "9095:9095"
+      - "9090:9090"
     networks:
       - spring-cloud-network
     depends_on:
