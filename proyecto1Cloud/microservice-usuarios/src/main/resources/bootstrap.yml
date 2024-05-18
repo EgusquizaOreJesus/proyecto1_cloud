@@ -11,6 +11,8 @@ spring:
     config:
       uri: http://${my_ip_config.value}:8081
       profile: dev
+jwt:
+  secret: eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY5NzQ5NTUyOCwiaW
 
 
 microservicio:
@@ -19,8 +21,6 @@ microservicio:
 frontend:
   base-url: http://localhost:3000
 
-jwt:
-  secret: eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY5NzQ5NTUyOCwiaW
 
 
 
