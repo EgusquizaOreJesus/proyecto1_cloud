@@ -1,8 +1,9 @@
 my_ip:
   value: 100.28.80.43
-
+  #100.28.80.43
 my_ip_config:
   value: 52.44.23.198
+  #52.44.23.198
 
 spring:
   application:

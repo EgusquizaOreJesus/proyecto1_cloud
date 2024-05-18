@@ -9,14 +9,11 @@ public class AppConfig {
     @Value("${microservicio.base-url}")
     private String backendBaseUrl;
 
-    @Value("${frontend.base-url}")
-    private String frontendBaseUrl;
 
-    public String getBackendBaseUrl() {
+
+    public String getBackendBaseUrl(){
         return backendBaseUrl;
     }
 
-    public String getFrontendBaseUrl() {
-        return frontendBaseUrl;
-    }
+
 }

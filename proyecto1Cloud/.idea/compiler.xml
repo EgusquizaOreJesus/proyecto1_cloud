@@ -8,7 +8,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="microservice-estados" />
-        <module name="capadeseguridad" />
         <module name="microservice-respuesta" />
         <module name="microservice-hilos" />
         <module name="microservice-usuarios" />
@@ -16,6 +15,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="capadeseguridad" target="17" />
       <module name="microservice.config" target="17" />
       <module name="microservice.eureka" target="17" />
     </bytecodeTargetLevel>
