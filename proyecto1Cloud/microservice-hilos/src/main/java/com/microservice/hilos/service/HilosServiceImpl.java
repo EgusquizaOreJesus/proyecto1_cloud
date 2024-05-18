@@ -55,6 +55,7 @@ public class HilosServiceImpl implements HilosService{
         } catch (Exception e) {
             throw new UserNotFoundException();
         }
+        System.out.println("Usuario encontrado: " + usuario.getNickname() + " " + usuario.getEmail() + " " + usuario.getId());
         Hilos hilo = Hilos.builder()
                 .tema(hilosdto.getTema())
                 .contenido(hilosdto.getContenido())

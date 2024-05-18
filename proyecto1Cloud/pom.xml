@@ -23,8 +23,6 @@
   <packaging>pom</packaging>    <!--> Indicamos que es un proyecto padre (va ser el contenedor)-->
   <modules>
     <module>microservice.gateway</module>
-    <module>microservice.eureka</module>
-    <module>microservice.config</module>
     <module>microservice-hilos</module>
     <module>microservice-respuesta</module>
     <module>microservice-usuarios</module>

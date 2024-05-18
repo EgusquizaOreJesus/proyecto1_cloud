@@ -7,18 +7,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="microservice.config" />
         <module name="microservice-estados" />
-        <module name="microservice-hilos" />
-        <module name="microservice.eureka" />
+        <module name="capadeseguridad" />
         <module name="microservice-respuesta" />
+        <module name="microservice-hilos" />
         <module name="microservice-usuarios" />
         <module name="microservice.gateway" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="microservice.config" target="17" />
+      <module name="microservice.eureka" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="capadeseguridad" options="-parameters" />
       <module name="microservice-estados" options="-parameters" />
       <module name="microservice-hilos" options="-parameters" />
       <module name="microservice-respuesta" options="-parameters" />

@@ -12,6 +12,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+//import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -41,31 +43,37 @@ public class UsuarioController {
         return usuarioService.findById(id);
     }
 
+    @GetMapping("/find_by_email/{email}")
+    public ResponseEntity<?> findUserByEmail(@PathVariable String email) {
+        return ResponseEntity.ok(usuarioService.findByEmail(email));
+    }
+
+    @GetMapping("/find_by_nickname/{nickname}")
+    public ResponseEntity<?> findUserByUsername(@PathVariable String nickname) {
+        return ResponseEntity.ok(usuarioService.findByNickname(nickname));
+    }
+
+    @GetMapping("/find_by_nicknameDetails/{nickname}")
+    public UserDetails findUserByNickname(@PathVariable String nickname) {
+        return usuarioService.findByNicknameDetails(nickname);
+    }
+
+
     @PostMapping("/create")
     public void saveUser(@RequestBody Usuario user) {
         usuarioService.save(user);
     }
 
+    @PostMapping("/save_2")
+    public UserDetails saveUser2(@RequestBody Usuario user) {
+         return usuarioService.save_2(user);
+    }
 
     // Listar todos los hilos de un usuario
     @GetMapping("/search_by_username/{userId}")
     public ResponseEntity findByUsername(@PathVariable Long userId) {
         return ResponseEntity.ok(usuarioService.findHilosByUser(userId));
     }
-
-    // Listar todas las respuestas de un usuario
-    /*
-        @GetMapping("/{id}/respuestas-participadas")
-    public ResponseEntity<List<Respuesta>> getResponsesParticipatedByUser(@PathVariable Long id) {
-        Usuario usuario = usuarioService.getUserById(id);
-        if (usuario != null) {
-            List<Respuesta> respuestas_usuario = respuestaService.getResponsesParticipatedByUser(usuario);
-            return ResponseEntity.ok(respuestas_usuario);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
-    }
-     */
 
     @PutMapping("/update/{id}")
     public void updateUser(@PathVariable Long id, @RequestBody Usuario user) {
@@ -112,8 +120,6 @@ public class UsuarioController {
     public ResponseEntity<ImagesDTO> getProfilePicturePath(@PathVariable("usuario_id") Long usuarioId) {
         return usuarioService.getProfilePicturePath(usuarioId);
     }
-
-
     // delete
     @DeleteMapping("/delete/{id}")
     public void deleteUser(@PathVariable Long id) {

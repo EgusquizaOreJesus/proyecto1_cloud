@@ -8,11 +8,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.boot.autoconfigure.web.WebProperties;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Data       // Crea los getter y setter
 @Builder    // Crea un objeto con todos los atributos
@@ -20,7 +20,7 @@ import java.util.Set;
 @Table(name = "usuarios")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Usuario {
+public class Usuario implements UserDetails {
      @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
      private Long id;
@@ -31,7 +31,7 @@ public class Usuario {
     @Column(nullable = false)
     private String nickname;
     // email
-
+    @Column(unique = true)
     private String email;
 
     // password
@@ -49,6 +49,9 @@ public class Usuario {
     private Set<Long> hilosCreados = new HashSet<>();
 
 
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
     @ElementCollection
     private Set<Long> respuestasParticipadas = new HashSet<>();
 
@@ -57,5 +60,44 @@ public class Usuario {
 
     @ElementCollection
     private List<Long> respuestas = new ArrayList<>();
+
+
+    public Long getId() {
+        return id;
+    }
+
+        @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority(role.name()));
+    }
+    @Override
+    public String getPassword() {
+        return password;
+    }
+    @Override
+    public String getUsername() {
+        return nickname;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return false;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return false;
+    }
+
 
 }

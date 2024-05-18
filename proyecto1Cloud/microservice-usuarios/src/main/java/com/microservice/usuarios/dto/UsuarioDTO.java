@@ -17,12 +17,16 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UsuarioDTO {
+
     private String nickname;
-    private String correo;
+    private Long id;
+
+    private String email;
 
     private String enlace_imagen;
 
     private String enlace_portada;
+
 
     private Set<Long> hilosCreados = new HashSet<>();
 

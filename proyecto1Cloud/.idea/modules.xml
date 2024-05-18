@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/proyecto1Cloud.iml" filepath="$PROJECT_DIR$/.idea/proyecto1Cloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice.config/microservice.config.iml" filepath="$PROJECT_DIR$/microservice.config/microservice.config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice.eureka/microservice.eureka.iml" filepath="$PROJECT_DIR$/microservice.eureka/microservice.eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/proyecto1Cloud.iml" filepath="$PROJECT_DIR$/proyecto1Cloud.iml" />
     </modules>
   </component>
 </project>

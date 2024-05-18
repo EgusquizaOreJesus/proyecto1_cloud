@@ -15,6 +15,10 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+//import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -47,13 +51,14 @@ public class UsuarioServiceImpl implements UsuarioService{
         // pasar mi lista de usuarios a un DTO
         List<UsuarioDTO> usuarioDTOList = usuarioRepository.findAll().stream().map(usuario -> UsuarioDTO.builder()
                 .nickname(usuario.getNickname())
-                .correo(usuario.getEmail())
+                .email(usuario.getEmail())
                 .enlace_imagen(usuario.getEnlace_imagen())
                 .enlace_portada(usuario.getEnlace_portada())
                 .hilosCreados(usuario.getHilosCreados())
                 .respuestasParticipadas(usuario.getRespuestasParticipadas())
                 .estados(usuario.getEstados())
                 .respuestas(usuario.getRespuestas())
+                .id(usuario.getId())
                 .build()).toList();
 
         return usuarioDTOList;
@@ -65,17 +70,93 @@ public class UsuarioServiceImpl implements UsuarioService{
         if (usuario != null) {
             return ResponseEntity.ok(UsuarioDTO.builder()
                     .nickname(usuario.getNickname())
-                    .correo(usuario.getEmail())
+                    .email(usuario.getEmail())
                     .enlace_imagen(usuario.getEnlace_imagen())
                     .enlace_portada(usuario.getEnlace_portada())
                     .hilosCreados(usuario.getHilosCreados())
                     .respuestasParticipadas(usuario.getRespuestasParticipadas())
                     .estados(usuario.getEstados())
                     .respuestas(usuario.getRespuestas())
+                    .id(usuario.getId())
                     .build());
         }
         throw new UserNotFoundException();
     }
+
+    @Override
+    public ResponseEntity<?> findByEmail(String email) {
+        Usuario usuario = usuarioRepository.findByEmail(email);
+        if (usuario != null) {
+            return ResponseEntity.ok(UsuarioDTO.builder()
+                    .nickname(usuario.getNickname())
+                    .email(usuario.getEmail())
+                    .enlace_imagen(usuario.getEnlace_imagen())
+                    .enlace_portada(usuario.getEnlace_portada())
+                    .hilosCreados(usuario.getHilosCreados())
+                    .respuestasParticipadas(usuario.getRespuestasParticipadas())
+                    .estados(usuario.getEstados())
+                    .respuestas(usuario.getRespuestas())
+                    .id(usuario.getId())
+                    .build());
+        }
+        throw new UserNotFoundException();
+    }
+
+    @Override
+    public boolean existsUserByEmail(String email) {
+        Usuario usuario = usuarioRepository.findByEmail(email);
+        if (usuario != null) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean existUserByNickname(String nickname) {
+        Usuario usuario = usuarioRepository.findByNickname(nickname);
+        if (usuario != null) {
+            return true;
+        }
+        return false;
+    }
+    public UserDetailsService userDetailsService() {
+        return new UserDetailsService() {
+            @Override
+            public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+                return usuarioRepository.findByEmail(username);
+            }
+        };
+    }
+    @Override
+    public ResponseEntity<?> findByNickname(String nickname) {
+        Usuario usuario = usuarioRepository.findByNickname(nickname);
+        if (usuario != null) {
+            return ResponseEntity.ok(UsuarioDTO.builder()
+                    .nickname(usuario.getNickname())
+                    .email(usuario.getEmail())
+                    .enlace_imagen(usuario.getEnlace_imagen())
+                    .enlace_portada(usuario.getEnlace_portada())
+                    .hilosCreados(usuario.getHilosCreados())
+                    .respuestasParticipadas(usuario.getRespuestasParticipadas())
+                    .estados(usuario.getEstados())
+                    .respuestas(usuario.getRespuestas())
+                    .id(usuario.getId())
+                    .build());
+        }
+        throw new UserNotFoundException();
+    }
+
+
+    @Override
+    public UserDetails findByNicknameDetails(String nickname) {
+        Usuario usuario = usuarioRepository.findByNickname(nickname);
+        if (usuario != null) {
+            return usuario;
+        }
+        throw new UserNotFoundException();
+    }
+
+
 
     @Override
     public void updateHilos(Long id, Long hilos) {
@@ -164,13 +245,14 @@ public class UsuarioServiceImpl implements UsuarioService{
                 usuarioRepository.save(user);
                 return ResponseEntity.ok(UsuarioDTO.builder()
                         .nickname(user.getNickname())
-                        .correo(user.getEmail())
+                        .email(user.getEmail())
                         .enlace_imagen(user.getEnlace_imagen())
                         .enlace_portada(user.getEnlace_portada())
                         .hilosCreados(user.getHilosCreados())
                         .respuestasParticipadas(user.getRespuestasParticipadas())
                         .estados(user.getEstados())
                         .respuestas(user.getRespuestas())
+                        .id(user.getId())
                         .build());
             } else {
                 throw new IllegalArgumentException("Tipo de archivo no admitido. Use imágenes con extensiones: " + Arrays.toString(allowedExtensions));
@@ -237,6 +319,11 @@ public class UsuarioServiceImpl implements UsuarioService{
     @Override
     public void save(Usuario course) {
         usuarioRepository.save(course);
+    }
+
+    @Override
+    public Usuario save_2(Usuario user) {
+        return usuarioRepository.save(user);
     }
 
     @Override

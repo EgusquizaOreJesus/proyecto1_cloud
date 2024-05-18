@@ -6,6 +6,9 @@ import com.microservice.usuarios.dto.UsuarioDTO;
 import com.microservice.usuarios.http.response.HilosByUserResponse;
 import lombok.extern.java.Log;
 import org.springframework.http.ResponseEntity;
+//import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -16,6 +19,16 @@ public interface UsuarioService {
     List<UsuarioDTO> findAll();
 
     ResponseEntity<?> findById(Long id);
+
+    ResponseEntity<?> findByEmail(String email);
+
+    boolean existsUserByEmail(String email);
+
+    boolean existUserByNickname(String nickname);
+
+    ResponseEntity<?> findByNickname(String nickname);
+
+    UserDetails findByNicknameDetails(String nickname);
 
     void updateHilos(Long id, Long hilos);
 
@@ -35,9 +48,12 @@ public interface UsuarioService {
 
     void save(Usuario user);
 
+    Usuario save_2(Usuario user);
+
     // todos los hilos que pertenecen a ese usuario
     HilosByUserResponse findHilosByUser(Long userId);
 
+    UserDetailsService userDetailsService();
     // delete
     void delete(Long id);
 

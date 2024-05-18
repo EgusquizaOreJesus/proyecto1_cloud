@@ -1,8 +1,8 @@
 my_ip:
-  value: 34.224.1.226
+  value: 100.28.80.43
 
 my_ip_config:
-  value: 100.28.129.190
+  value: 52.44.23.198
 
 spring:
   application:
@@ -12,8 +12,18 @@ spring:
       uri: http://${my_ip_config.value}:8081
       profile: dev
 
+
 microservicio:
   base-url: http://${my_ip.value}:9092
 
 frontend:
   base-url: http://localhost:7777
+
+jwt:
+  secret: eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY5NzQ5NTUyOCwiaW
+
+
+
+
+
+
