@@ -5,7 +5,8 @@ my_ip_config:
   value: 52.44.23.198
 
 frontend:
-  base-url: http://localhost:3000
+    base-url: http://localhost:3000
+
 
 spring:
   application:
