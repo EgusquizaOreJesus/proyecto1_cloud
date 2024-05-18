@@ -11,7 +11,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 public class MicroserviceUsuariosApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MicroserviceUsuariosApplication.class, args);
+			SpringApplication.run(MicroserviceUsuariosApplication.class, args);
 		// rutas publicas de usuarios
 
 	}

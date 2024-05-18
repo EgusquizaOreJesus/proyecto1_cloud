@@ -17,7 +17,7 @@ microservicio:
   base-url: http://${my_ip.value}:9092
 
 frontend:
-  base-url: http://localhost:7777
+  base-url: http://localhost:3000
 
 jwt:
   secret: eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY5NzQ5NTUyOCwiaW
