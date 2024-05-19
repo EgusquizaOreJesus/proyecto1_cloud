@@ -37,6 +37,7 @@ public class HilosServiceImpl implements HilosService{
                     .usuario(hilo.getUsuario())
                     .nickname(userClient.findUserById(hilo.getUsuario()).getNickname())
                     .respuestas(hilo.getRespuestas())
+                    .id(hilo.getId())
                     .build()
             );
         }
@@ -55,6 +56,7 @@ public class HilosServiceImpl implements HilosService{
                     .usuario(hilos.getUsuario())
                     .nickname(userClient.findUserById(hilos.getUsuario()).getNickname())
                     .respuestas(hilos.getRespuestas())
+                    .id(hilos.getId())
                     .build()
             );
         }
@@ -90,6 +92,7 @@ public class HilosServiceImpl implements HilosService{
                 .nickname(usuario.getNickname())
                 .usuario(userId)
                 .respuestas(hilo.getRespuestas())
+                .id(hilo.getId())
                 .build()
         );
     }

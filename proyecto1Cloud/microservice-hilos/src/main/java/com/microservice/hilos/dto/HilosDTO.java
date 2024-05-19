@@ -37,4 +37,6 @@ public class HilosDTO {
     private Long cantidadReaccciones;
 
     private Long cantidadReports;
+
+    private Long id;
 }
