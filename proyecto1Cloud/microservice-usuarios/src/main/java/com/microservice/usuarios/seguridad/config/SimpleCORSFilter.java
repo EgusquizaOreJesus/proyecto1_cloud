@@ -15,14 +15,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class SimpleCORSFilter implements javax.servlet.Filter {
 
-    @Value("${frontend.base-url}")
-    private String frontendBaseUrl;
     @Override
     public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
         HttpServletResponse response = (HttpServletResponse) res;
         HttpServletRequest request = (HttpServletRequest) req;
 
-        response.setHeader("Access-Control-Allow-Origin", frontendBaseUrl);
+        response.setHeader("Access-Control-Allow-Origin", "http://23.23.220.89:3000");
         response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE, PUT");
         response.setHeader("Access-Control-Max-Age", "3600");
         response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
