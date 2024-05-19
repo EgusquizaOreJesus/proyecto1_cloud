@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
-@FeignClient(value = "msvc-hilos", url = "http://${my_ip.value}/api/hilos")
+@FeignClient(value = "msvc-hilos", url = "http://${my_ip.value}:9090/api/hilos")
 public interface HilosClient {
     // Lista de HilosDTO que se obtiene del microservicio de usuarios por Id
 

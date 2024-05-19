@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(value = "msvc-hilos" , url = "http://${my_ip.value}/api/hilos")
+@FeignClient(value = "msvc-hilos" , url = "http://${my_ip.value}:9090/api/hilos")
 public interface HilosClient {
 
     @GetMapping("/find/{id}")
