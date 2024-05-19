@@ -20,7 +20,7 @@ microservicio:
   base-url: http://${my_ip.value}:9092
 
 frontend:
-  base-url: http://23.23.220.89:3000
+  base-url: http://frontbucket0.s3-website-us-east-1.amazonaws.com/
 
 
 

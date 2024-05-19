@@ -20,7 +20,7 @@ public class SimpleCORSFilter implements javax.servlet.Filter {
         HttpServletResponse response = (HttpServletResponse) res;
         HttpServletRequest request = (HttpServletRequest) req;
 
-        response.setHeader("Access-Control-Allow-Origin", "http://23.23.220.89:3000");
+        response.setHeader("Access-Control-Allow-Origin", "http://frontbucket0.s3-website-us-east-1.amazonaws.com");
         response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE, PUT");
         response.setHeader("Access-Control-Max-Age", "3600");
         response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
