@@ -1,4 +1,4 @@
-package com.microservice.usuarios;
+package com.microservice.usuarios.seguridad.config;
 
 import java.io.IOException;
 import javax.servlet.FilterChain;
