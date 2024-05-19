@@ -31,7 +31,7 @@ public class HilosDTO {
 
     private Long usuario;
 
-
+    private String nickname;
     private List<Long> respuestas = new ArrayList<>();
 
     private Long cantidadReaccciones;

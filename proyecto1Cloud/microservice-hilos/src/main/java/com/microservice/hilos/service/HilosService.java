@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface HilosService {
 
-    List<Hilos> findAll();
+    List<HilosDTO> findAll();
 
     ResponseEntity<HilosDTO> findById(Long id);
 

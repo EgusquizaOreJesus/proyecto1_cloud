@@ -11,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -24,9 +26,23 @@ public class HilosServiceImpl implements HilosService{
     private UserClient userClient;
 
     @Override
-    public List<Hilos> findAll() {
-        return hilosRepository.findAll();
+    public List<HilosDTO> findAll() {
+        List<Hilos> hilos = hilosRepository.findAll();
+        List<HilosDTO> hilosDTO = new ArrayList<>(); // Inicializar como una lista vacía
+        for (Hilos hilo : hilos) {
+            hilosDTO.add(HilosDTO.builder()
+                    .tema(hilo.getTema())
+                    .contenido(hilo.getContenido())
+                    .fechaCreacion(hilo.getFechaCreacion())
+                    .usuario(hilo.getUsuario())
+                    .nickname(userClient.findUserById(hilo.getUsuario()).getNickname())
+                    .respuestas(hilo.getRespuestas())
+                    .build()
+            );
+        }
+        return hilosDTO;
     }
+
 
     @Override
     public ResponseEntity<HilosDTO> findById(Long id) {
@@ -37,6 +53,7 @@ public class HilosServiceImpl implements HilosService{
                     .contenido(hilos.getContenido())
                     .fechaCreacion(hilos.getFechaCreacion())
                     .usuario(hilos.getUsuario())
+                    .nickname(userClient.findUserById(hilos.getUsuario()).getNickname())
                     .respuestas(hilos.getRespuestas())
                     .build()
             );
@@ -70,6 +87,7 @@ public class HilosServiceImpl implements HilosService{
                 .tema(hilo.getTema())
                 .contenido(hilo.getContenido())
                 .fechaCreacion(hilo.getFechaCreacion())
+                .nickname(usuario.getNickname())
                 .usuario(userId)
                 .respuestas(hilo.getRespuestas())
                 .build()
