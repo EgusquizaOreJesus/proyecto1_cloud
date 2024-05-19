@@ -5,7 +5,7 @@ my_ip_config:
   value: 52.44.23.198
 
 frontend:
-    base-url: http://23.23.220.89:3000
+    url: http://frontend002.s3-website-us-east-1.amazonaws.com
 
 
 spring:

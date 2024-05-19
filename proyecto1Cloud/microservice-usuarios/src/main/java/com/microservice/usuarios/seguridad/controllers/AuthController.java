@@ -23,13 +23,13 @@ public class AuthController {
     }
 
     // cors
-    @CrossOrigin(origins = "http://frontbucket0.s3-website-us-east-1.amazonaws.com")
+    @CrossOrigin(origins = "http://frontend002.s3-website-us-east-1.amazonaws.com")
     @PostMapping("/signup")
     public ResponseEntity<ResponseDTO> signup(@RequestBody @Valid SignUpRequest request) {
         return ResponseEntity.ok(authenticationService.signup(request));
     }
 
-    @CrossOrigin(origins = "http://frontbucket0.s3-website-us-east-1.amazonaws.com")
+    @CrossOrigin(origins = "http://frontend002.s3-website-us-east-1.amazonaws.com")
     @PostMapping("/signin")
     public ResponseEntity<ResponseDTO>  signin(@RequestBody @Valid SigninRequest request) {
         return ResponseEntity.ok(authenticationService.signin(request));
