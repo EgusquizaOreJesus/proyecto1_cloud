@@ -32,6 +32,8 @@ public class HilosDTO {
     private Long usuario;
 
     private String nickname;
+
+    private String enlace_imagen;
     private List<Long> respuestas = new ArrayList<>();
 
     private Long cantidadReaccciones;

@@ -38,6 +38,7 @@ public class HilosServiceImpl implements HilosService{
                     .nickname(userClient.findUserById(hilo.getUsuario()).getNickname())
                     .respuestas(hilo.getRespuestas())
                     .id(hilo.getId())
+                    .enlace_imagen(hilo.getEnlace_imagen())
                     .build()
             );
         }
@@ -57,6 +58,7 @@ public class HilosServiceImpl implements HilosService{
                     .nickname(userClient.findUserById(hilos.getUsuario()).getNickname())
                     .respuestas(hilos.getRespuestas())
                     .id(hilos.getId())
+                    .enlace_imagen(hilos.getEnlace_imagen())
                     .build()
             );
         }
@@ -80,6 +82,7 @@ public class HilosServiceImpl implements HilosService{
                 .contenido(hilosdto.getContenido())
                 .fechaCreacion(new Date())
                 .usuario(userId)
+                .enlace_imagen(usuario.getEnlace_imagen())
                 .build();
         // actualizamos los hilos del usuario
 
@@ -93,6 +96,7 @@ public class HilosServiceImpl implements HilosService{
                 .usuario(userId)
                 .respuestas(hilo.getRespuestas())
                 .id(hilo.getId())
+                .enlace_imagen(hilo.getEnlace_imagen())
                 .build()
         );
     }

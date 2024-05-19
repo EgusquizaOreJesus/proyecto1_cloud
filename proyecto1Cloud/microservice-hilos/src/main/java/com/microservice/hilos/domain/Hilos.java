@@ -38,6 +38,8 @@ public class Hilos {
 
         private Long usuario;
 
+        private String enlace_imagen;
+
         @ElementCollection
         private List<Long> respuestas = new ArrayList<>();
 
