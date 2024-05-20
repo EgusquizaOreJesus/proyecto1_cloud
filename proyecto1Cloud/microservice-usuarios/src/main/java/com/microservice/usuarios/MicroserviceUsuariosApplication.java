@@ -1,5 +1,7 @@
 package com.microservice.usuarios;
 
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Info;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
@@ -25,5 +27,15 @@ public class MicroserviceUsuariosApplication {
 			}
 		};
 	}
-
+	@Bean
+	public OpenAPI customOpenAPI(){
+		return new OpenAPI().
+				info(new Info()
+						.title("Microservicio de Usuarios API")
+						.version("1.0")
+						.description("Documentación de la API de usuarios")
+						.termsOfService("http://swagger.io/terms/")
+						.license(new io.swagger.v3.oas.models.info.License().name("Apache 2.0").url("http://springdoc.org"))
+				);
+	}
 }

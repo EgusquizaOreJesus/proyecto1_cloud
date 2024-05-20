@@ -5,6 +5,15 @@ my_ip_config:
   value: 52.44.23.198
   #52.44.23.198
 
+springdoc:
+  swagger-ui:
+    path: /doc/swagger-ui.html
+    enabled: true
+
+  api-docs:
+    enabled: true
+  paths-to-match: /api/**
+
 spring:
   application:
     name: msvc-usuarios

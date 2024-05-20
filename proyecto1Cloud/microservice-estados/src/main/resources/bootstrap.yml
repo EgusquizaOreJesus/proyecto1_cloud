@@ -5,6 +5,16 @@ my_ip_config:
   value: 52.44.23.198
 frontend:
   url: http://frontend002.s3-website-us-east-1.amazonaws.com
+
+springdoc:
+  swagger-ui:
+    path: /doc/swagger-ui.html
+    enabled: true
+
+  api-docs:
+    enabled: true
+  paths-to-match: /api/**
+
 spring:
   application:
     name: msvc-estados
