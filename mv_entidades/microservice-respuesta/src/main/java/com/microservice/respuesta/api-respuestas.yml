@@ -1,0 +1,264 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Microservicio de Respuestas API",
+    "description": "Documentación de la API de respuestas",
+    "termsOfService": "http://swagger.io/terms/",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://springdoc.org"
+    },
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://100.28.80.43:9091",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/api/respuestas/{idEmisor}/{hiloId}": {
+      "post": {
+        "tags": [
+          "respuesta-controller"
+        ],
+        "operationId": "createRespuesta",
+        "parameters": [
+          {
+            "name": "idEmisor",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          {
+            "name": "hiloId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RespuestaDTO"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/respuestas/{respuestaId}": {
+      "get": {
+        "tags": [
+          "respuesta-controller"
+        ],
+        "operationId": "findRespuestaById",
+        "parameters": [
+          {
+            "name": "respuestaId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/respuestas/search_by_hilo/{hiloId}": {
+      "get": {
+        "tags": [
+          "respuesta-controller"
+        ],
+        "operationId": "findByHiloId",
+        "parameters": [
+          {
+            "name": "hiloId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/respuestas/rootRespuestas/{hiloId}": {
+      "get": {
+        "tags": [
+          "respuesta-controller"
+        ],
+        "operationId": "findRootRespuestas",
+        "parameters": [
+          {
+            "name": "hiloId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/respuestas/respuestas_hijas/{respuestaPadreId}": {
+      "get": {
+        "tags": [
+          "respuesta-controller"
+        ],
+        "operationId": "findRespuestasHijas",
+        "parameters": [
+          {
+            "name": "respuestaPadreId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/respuestas/all": {
+      "get": {
+        "tags": [
+          "respuesta-controller"
+        ],
+        "operationId": "findAll",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "RespuestaDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "contenido": {
+            "type": "string"
+          },
+          "subRespuestaIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int64"
+            }
+          },
+          "nickname": {
+            "type": "string"
+          },
+          "enlace_imagen": {
+            "type": "string"
+          },
+          "cantidadReacciones": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fechaCreacion": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "respuestaPadreId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "hiloId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "usuarioId": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      }
+    }
+  }
+}

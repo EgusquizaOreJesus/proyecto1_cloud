@@ -1,0 +1,12 @@
+
+my_ip_config:
+  value: 52.44.23.198
+  #52.44.23.198
+
+spring:
+  application:
+    name: msvc-gateway
+  cloud:
+    config:
+      uri: http://${my_ip_config.value}:8081
+      profile: dev

@@ -1,0 +1,39 @@
+my_ip:
+  value: 100.28.80.43
+  #100.28.80.43
+my_ip_config:
+  value: 52.44.23.198
+  #52.44.23.198
+
+springdoc:
+  swagger-ui:
+    path: /doc/swagger-ui.html
+    enabled: true
+
+  api-docs:
+    enabled: true
+  paths-to-match: /api/**
+
+spring:
+  application:
+    name: msvc-usuarios
+  cloud:
+    config:
+      uri: http://${my_ip_config.value}:8081
+      profile: dev
+jwt:
+  secret: eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTY5NzQ5NTUyOCwiaW
+
+
+microservicio:
+  base-url: http://${my_ip.value}:9092
+
+frontend:
+  url: http://frontend002.s3-website-us-east-1.amazonaws.com
+
+
+
+
+
+
+
