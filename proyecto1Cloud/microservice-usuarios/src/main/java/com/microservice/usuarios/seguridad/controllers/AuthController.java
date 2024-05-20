@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/usuarios")
+@CrossOrigin(origins = "http://frontend002.s3-website-us-east-1.amazonaws.com")
 public class AuthController {
     private final AuthenticationService authenticationService;
 
@@ -23,13 +24,11 @@ public class AuthController {
     }
 
     // cors
-    @CrossOrigin(origins = "http://frontend002.s3-website-us-east-1.amazonaws.com")
     @PostMapping("/signup")
     public ResponseEntity<ResponseDTO> signup(@RequestBody @Valid SignUpRequest request) {
         return ResponseEntity.ok(authenticationService.signup(request));
     }
 
-    @CrossOrigin(origins = "http://frontend002.s3-website-us-east-1.amazonaws.com")
     @PostMapping("/signin")
     public ResponseEntity<ResponseDTO>  signin(@RequestBody @Valid SigninRequest request) {
         return ResponseEntity.ok(authenticationService.signin(request));
