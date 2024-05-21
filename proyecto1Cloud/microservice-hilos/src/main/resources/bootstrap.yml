@@ -6,6 +6,13 @@ my_ip_config:
 frontend:
   url: http://frontend002.s3-website-us-east-1.amazonaws.com
 
+
+logging:
+  level:
+    org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG
+    org.springframework.web.cors: DEBUG
+
+
 springdoc:
   swagger-ui:
     path: /doc/swagger-ui.html
@@ -22,3 +29,13 @@ spring:
     config:
       uri: http://${my_ip_config.value}:8081
       profile: dev
+management:
+  endpoints:
+    web:
+      cors:
+        allow-credentials: true
+        allowed-origins: "*"
+        allowed-methods: "*"
+        allowed-headers: "*"
+
+
